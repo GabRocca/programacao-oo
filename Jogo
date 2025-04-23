@@ -1,0 +1,30 @@
+import java.util.Random;
+public class Jogo {
+
+    private Jogador jogador;
+    private int num; 
+
+        public Jogo(Jogador jogador){
+            this.jogador = jogador;     
+            Random rand = new Random(); 
+            this.num = rand.nextInt(100)+1; 
+        }
+
+             public boolean jogar(int tentativas) {
+                 jogador.addTentativas();
+
+                  if (tentativas < num) { 
+                    System.out.println("ERRADO - o numero e maior");
+                     return false; 
+         }         else if (tentativas > num) {
+                     System.out.println("ERRADO - o numero e menor");
+                     return false; 
+         }         else {
+                    int pt = 100-jogador.getTentativas()*10; 
+                    jogador.attPt(pt); 
+                    jogador.attPt(Math.max(pt, 0)); 
+                    System.out.println("CERTO"); 
+                         return true; 
+            }
+     }
+}

@@ -1,0 +1,19 @@
+import java.util.ArrayList;
+
+    public class Placar {
+    private ArrayList<Jogador> ranking; 
+
+        public Placar (){
+            this.ranking = new ArrayList<>(); 
+     }
+
+        public void addJogador(Jogador jogador){
+        ranking.add(jogador); 
+        }
+
+        public void mostrarRanking(){
+            System.out.println("Ranking");
+            for (Jogador jogador:ranking) {
+                System.out.println(jogador.getNome() + " " + jogador.getPt() + " Pontos"); 
+        }
+}

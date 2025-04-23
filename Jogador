@@ -1,0 +1,46 @@
+
+public class Jogador {
+
+    private String nome;    
+    private int hp; 
+    private int pt;  
+
+     public Jogador (String nome){
+        this.nome = nome;       
+        this.tentativas = 0;    
+        this.pt = 0;    
+        }
+
+     public String getNome() {
+        return nome;
+        }
+
+     public void setNome(String nome) {
+        this.nome = nome;
+        }
+
+     public int getHp() {
+        return hp;
+     }
+
+     public void setHp(int tentativas) {
+        this.hp = tentativas;
+        }
+
+        public int getPt() {
+        return pt;
+     }
+
+        public void setPt(int pt) {
+        this.pt = pt;
+     }
+
+        public void addHp() {
+        this.hp++; 
+        }
+
+     public void attPt(int valor) {
+        this.pt += valor;
+        }
+}
+// Gabriela Rocca Lobo da Costa - 2024195564

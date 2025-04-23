@@ -1,0 +1,40 @@
+
+import java.util.Scanner; 
+public class Main {
+
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in); 
+            Placar placar = new Placar(); 
+
+            boolean contJogo = true; 
+
+                 while (contJogo) { 
+                    System.out.print("Digite seu nome: "); 
+                    String nome = scanner.nextLine(); 
+                    Jogador jogador = new Jogador(nome); 
+                         Jogo jogo = new Jogo(jogador);
+
+            boolean certo = false; 
+                 while (!certo) { 
+                    System.out.println("Digite um numero entre 1 e 100: ");
+
+                if (jogo.jogar(scanner.nextInt())) { 
+                    System.out.println("Tentativas: " + jogador.getTentativas());
+                    System.out.println("Pts: " + jogador.getPt()); 
+                    placar.adicionarJogador(jogador);
+                    placar.mostrarRanking();
+                    scanner.nextLine();
+                    certo = true; 
+                    }
+             }
+
+                 System.out.print("Jogar de novo? (S/N) - digita em maiusculo pfv: ");
+                 String resposta = scanner.nextLine(); 
+                 if (!resposta.equalsIgnoreCase("S")) { 
+                     contJogando = false;
+             }
+            }
+
+                         scanner.close(); 
+     }
+}
